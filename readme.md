@@ -16,6 +16,9 @@ If all the research code is committed to a system like Github (Dataverse lacks t
 
 One reason researchers do not cite software is that they don't see others doing it. One way to cue that software should be cited is to show a message when the software is loaded --- please cite the software. Such a message can also serve as a reminder for people who merely forget to cite the software. For instance, my hunch is that one of the [stargazer](https://scholar.google.com/citations?user=jRCc4kMAAAAJ&hl=en) has been cited more than 1,000 times (June 2023) is because the package produces a message `.onAttach` to remind the user to cite the package. 
 
+
+<img src = "stargazer.png">
+
 ## Initial 'Experiments'
 
 * https://github.com/s3alfisc/fwildclusterboot/pull/125
