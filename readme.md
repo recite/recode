@@ -1,18 +1,20 @@
-### Nudging Citations to Software
+## Nudging Citations to Software
 
-Here are two reasons why citing software in papers is a net good:
+### Macro Concerns
 
-1. Incentivizes Production of High Quality Software: The role of software in enabling and accelerating research cannot be understated. But the incentives for producing software in academia are still very thin partly because many people do not cite the software they use; the currency in academia is still citations.
+1. Lack of Incentives for the Production of High-Quality Software. Software's role in enabling and accelerating research cannot be understated. But the incentives for producing software in academia are still very thin. One reason is that people do not cite the software they use; the academic currency is still citations.
 
-2. Helps Track Errors: Citing software (especially the precise version of software) makes it easier to track the impact of errors in particular versions of software. [Github dependency graph](https://docs.github.com/en/rest/dependency-graph?apiVersion=2022-11-28) is a good analog for a similar use case in software. (This point is plausibly best addressed using a similar mechanism as the Github Dependency Graph.)
+2. Lack of Good Ways to Track the Consequences of Software Bugs (Errors). Research outputs are a function of the code researchers write themselves and the third-party developer code they use. Let's assume that the peer review process vets the code written by the researcher. This leaves code written by third-party developers. What precludes errors in third-party code? Not much. The code is generally not peer-reviewed though there are efforts underway. There is also no easy way to track the impact of bugs in third-party code on research outputs.
 
-### Why Not Solve Using Citations?
+### Citations Are the Wrong Long Term Solution
 
-Software graphs can be easily produced if the deployment of each paper is via a docker image or via a Github like system (which seems optimal). But the arc of progress is long and citations are plausibly a good short-term solution.
+Conventional reference lists (~ a bad database) are a bad way to address the macro concerns but are likely a good short-term solution for #1. 
+
+If all the research code is committed to a system like Github (Dataverse lacks the tools for #2) with enough meta information about (the precise verison of the) third-party software being used, e.g., import statements in R, etc., we can create a system like the [Github dependency graph](https://docs.github.com/en/rest/dependency-graph?apiVersion=2022-11-28) to calculate the number of times a software has been used (and these metrics can be shown on Google Scholar, etc.) and also create systems that trigger warnings to authors when consquential updates to underlying software are made.
 
 ### How to Nudge Citations to Software?
 
-One reason why researchers may not cite software is because they don't see others doing it. One way to cue that software should be cited is to show a message when the software is loaded or used to cite the software. (Such a message can also serve as a reminder for people who merely forget to cite the software.) For instance, there are more than 1k citations to [stargazer](https://scholar.google.com/citations?user=jRCc4kMAAAAJ&hl=en). It is likely that one of the reasons is that the package produces a message `.onAttach` to remind the user to cite the package. 
+One reason researchers do not cite software is that they don't see others doing it. One way to cue that software should be cited is to show a message when the software is loaded --- please cite the software. Such a message can also serve as a reminder for people who merely forget to cite the software. For instance, my hunch is that one of the [stargazer](https://scholar.google.com/citations?user=jRCc4kMAAAAJ&hl=en) has been cited more than 1,000 times (June 2023) is because the package produces a message `.onAttach` to remind the user to cite the package. 
 
 ## Initial 'Experiments'
 
