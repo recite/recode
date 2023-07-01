@@ -19,12 +19,17 @@ cran$email <- str_extract(cran$Maintainer, "\\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\
 # Let's create a df at user/email level as the treatment will be at user level
 cran_unique <- cran[!duplicated(cran$email), ]
 
-
 # Let's randomly sample 100 people
 set.seed(42)
 
 # Create a new column with values 0 and 1 in proportion of .01 (n ~ 100)
 cran_unique$selected_init_sample <- sample(c(0, 1), size = nrow(cran_unique), replace = TRUE, prob = c(0.99, 0.01))
 
-cran_unique$email[cran_unique$selected_init_sample == 1]
+init_list = cran_unique$email[cran_unique$selected_init_sample == 1]
+
+# Specify the file path
+file_path <- "06_30_2023_list.txt"
+
+# Write the list strings to the text file
+writeLines(init_list, file_path)
 
