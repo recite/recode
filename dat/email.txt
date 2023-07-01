@@ -1,0 +1,36 @@
+Hi,
+
+I am Gaurav. Like you, I develop R packages. 
+
+Recently, I have been thinking about how to increase citations to R packages. I believe one of the reasons users don't cite software is that citations to software aren't the norm in academia. Another is that users forget. Taking inspiration from Marek Hlavac, whose stargazer package has more than 1,000 citations, I believe a short .onAttach message cuing the citation can help increase citations.  
+
+Here's the code in stargazer that produces the StartupMessage:
+
+https://github.com/cran/stargazer/blob/master/R/stargazer-internal.R
+
+We can also rewrite the code using the citation function in R as follows:
+
+```
+packageStartupMessage("\nPlease cite as:\n")
+citationInfo <- citation("stargazer")
+ 
+packageStartupMessage(paste(citationInfo$title))
+```
+
+A note thanking users may make the message even more effective:
+
+```
+.onAttach <- function(libname, pkgname) {
+  package_citation <- "Author, X. (Year). MyPackage: A powerful R package for XYZ. R Foundation for Statistical Computing. Version X.X. URL: https://example.com/mypackage"
+  message("Thank you for using MyPackage!")
+  message("To acknowledge our work, please cite the package:")
+  message(package_citation)
+}
+
+```
+
+I hope this approach helps you encourage citations for your R package. Good luck with your work, and I hope it receives the recognition it deserves!
+
+Gaurav
+
+
