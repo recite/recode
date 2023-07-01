@@ -24,9 +24,13 @@ One reason researchers do not cite software is that they don't see others doing 
 * https://github.com/s3alfisc/fwildclusterboot/pull/125
 * https://github.com/kosukeimai/wru/pull/102
 
-## Plan
+## Scripts
 
-* Write a script to email a random sample of maintainers. Script [here](scripts/email_R_maintainers.R)
+* Script to email a random sample of R maintainers [here](scripts/email_R_maintainers.R)
+* Script for producing similar messages in Python [here](scripts/cite.py)
+* Example of the `.onAttach` message using the citation function [here](scripts/cite.R)
+
+## Future
 * Write software to PR a list of R and Python packages on GitHub with a similar message.
 
 ### References
