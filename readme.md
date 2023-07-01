@@ -26,6 +26,7 @@ One reason researchers do not cite software is that they don't see others doing 
 
 ## Plan
 
+* Write a script to email a random sample of maintainers. Script [here](scripts/email_R_maintainers.R)
 * Write software to PR a list of R and Python packages on GitHub with a similar message.
 
 ### References
