@@ -1,4 +1,4 @@
-## Reminding to Cite: Increasing Citations to Software
+## Recode: Effect of Reminder to Cite Software
 
 ### Macro Concerns
 
