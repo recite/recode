@@ -25,11 +25,14 @@ set.seed(42)
 # Create a new column with values 0 and 1 in proportion of .01 (n ~ 100)
 cran_unique$selected_init_sample <- sample(c(0, 1), size = nrow(cran_unique), replace = TRUE, prob = c(0.99, 0.01))
 
-init_list = cran_unique$email[cran_unique$selected_init_sample == 1]
-
-# Specify the file path
-file_path <- "06_30_2023_list.txt"
-
-# Write the list strings to the text file
+init_list <- cran_unique$email[cran_unique$selected_init_sample == 1]
+file_path <- "dat/06_30_2023_list.txt"
 writeLines(init_list, file_path)
+
+# gmail send limit is 500 emails/day so get another 400
+cran_unique$selected_second_sample <- sample(c(0, 1), size = nrow(cran_unique), replace = TRUE, prob = c(0.965, 0.035))
+
+sec_list <- cran_unique$email[cran_unique$selected_init_sample == 0 & cran_unique$selected_second_sample == 1]
+file_path <- "dat/06_30_2023_list_b.txt"
+writeLines(sec_list, file_path)
 
