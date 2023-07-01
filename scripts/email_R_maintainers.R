@@ -36,3 +36,14 @@ sec_list <- cran_unique$email[cran_unique$selected_init_sample == 0 & cran_uniqu
 file_path <- "dat/06_30_2023_list_b.txt"
 writeLines(sec_list, file_path)
 
+# compliance is low so need to reach out to more people
+cran_unique$last_sample <- sample(c(0, 1), size = nrow(cran_unique), replace = TRUE, prob = c(0.5, 0.5))
+
+# Take out marek
+rest_list <- cran_unique$email[cran_unique$selected_init_sample == 0 & 
+                                 cran_unique$selected_second_sample == 0 & 
+                                 cran_unique$last_sample == 1]
+file_path <- "dat/07_01_2023_list.txt"
+writeLines(rest_list, file_path)
+
+
