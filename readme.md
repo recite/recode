@@ -1,4 +1,4 @@
-## Missing Citations to Software
+## Reminding to Cite: Increasing Citations to Software
 
 ### Macro Concerns
 
