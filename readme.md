@@ -1,4 +1,4 @@
-## Recode: Effect of Reminder to Cite Software
+## Recode: The Effect of Reminder to Cite Software
 
 ### Macro Concerns
 
